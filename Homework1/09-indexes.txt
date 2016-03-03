@@ -1,0 +1,57 @@
+A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and storage space to maintain the index data structure. Indexes are used to quickly locate data without having to search every row in a database table every time a database table is accessed. Indexes can be created using one or more columns of a database table, providing the basis for both rapid random lookups and efficient access of ordered records.
+
+An index is a copy of select columns of data from a table that can be searched very efficiently that also includes a low-level disk block address or direct link to the complete row of data it was copied from. Some databases extend the power of indexing by letting developers create indices on functions or expressions. For example, an index could be created on upper(last_name), which would only store the upper case versions of the last_name field in the index. Another option sometimes supported is the use of partial indices, where index entries are created only for those records that satisfy some conditional expression. A further aspect of flexibility is to permit indexing on user-defined functions, as well as expressions formed from an assortment of built-in functions.
+
+
+					Indexing methods:
+
+Non-clustered
+
+The data is present in arbitrary order, but the logical ordering is specified by the index. The data rows may be spread throughout the table regardless of the value of the indexed column or expression. The non-clustered index tree contains the index keys in sorted order, with the leaf level of the index containing the pointer to the record (page and the row number in the data page in page-organized engines; row offset in file-organized engines).
+
+In a non-clustered index,
+The physical order of the rows is not the same as the index order.
+The indexed columns are typically non-primary key columns used in JOIN, WHERE, and ORDER BY clauses.
+
+There can be more than one non-clustered index on a database table.
+
+
+Clustered
+
+Clustering alters the data block into a certain distinct order to match the index, resulting in the row data being stored in order. Therefore, only one clustered index can be created on a given database table. Clustered indices can greatly increase overall speed of retrieval, but usually only where the data is accessed sequentially in the same or reverse order of the clustered index, or when a range of items is selected.
+
+Since the physical records are in this sort order on disk, the next row item in the sequence is immediately before or after the last one, and so fewer data block reads are required. The primary feature of a clustered index is therefore the ordering of the physical data rows in accordance with the index blocks that point to them. Some databases separate the data and index blocks into separate files, others put two completely different data blocks within the same physical file(s).
+
+
+Cluster
+
+When multiple databases and multiple tables are joined, it's referred to as a cluster (not to be confused with clustered index described above). The records for the tables sharing the value of a cluster key shall be stored together in the same or nearby data blocks. This may improve the joins of these tables on the cluster key, since the matching records are stored together and less I/O is required to locate them.[2] The cluster configuration defines the data layout in the tables that are parts of the cluster. A cluster can be keyed with a B-Tree index or a hash table. The data block where the table record is stored is defined by the value of the cluster key.A cluster is a group of items.
+
+
+						B-Tree:
+
+In computer science, a B-tree is a tree data structure that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time. The B-tree is a generalization of a binary search tree in that a node can have more than two children (Comer 1979, p. 123). Unlike self-balancing binary search trees, the B-tree is optimized for systems that read and write large blocks of data. It is commonly used in databases and filesystems.
+
+
+					Column-store index:
+
+A columnstore index is a technology for storing, retrieving and managing data by using a columnar data format, called a columnstore.
+
+
+					Full text search index:
+
+In text retrieval, full text search refers to techniques for searching a single computer-stored document or a collection in a full text database. Full-text search is distinguished from searches based on metadata or on parts of the original texts represented in databases (such as titles, abstracts, selected sections, or bibliographical references). In a full-text search, a search engine examines all of the words in every stored document as it tries to match search criteria for example (text specified by a user). Full-text-searching techniques became common in online bibliographic databases in the 1990s.[verification needed] Many websites and application programs (such as word processing software) provide full-text-search capabilities. Some web search engines, such as AltaVista, employ full-text-search techniques, while others index only a portion of the web pages examined by their indexing systems.
+
+
+					Spatial index:
+
+A spatial index is a type of extended index that allows you to index a spatial column. A spatial column is a table column that contains data of a spatial data type, such as geometry or geography
+
+
+					Pros and cons:
+
+Advantages: use an index for quick access to a database table specific information.  The index is a structure of the database table the value of one or more columns to sort. As a general rule, only when the data in the index column Frequent queries, only need to create an index on the table.  The index take up disk space and reduce to add, delete, and update the line speed.  In most cases, the speed advantages of indexes for data retrieval greatly exceeds it. 
+
+Disadvantages: too index will affect the speed of update and insert, because it requires the same update each index file.  For a frequently updated and inserted into the table, there is no need for a rarely used where the words indexed separately, small table, the cost of sorting will not be great, there is no need to create additional indexes.  In some cases, the indexing words may not be fast, for example, the index is placed in a contiguous memory space, which will increase the burden of disk read, which is optimal, it should be through the actual use of the environment to be tested.
+
+

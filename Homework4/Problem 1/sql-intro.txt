@@ -1,0 +1,26 @@
+SQL - Structured Query Language - is a special-purpose programming language designed for managing data held in a relational database management system (RDBMS), or for stream processing in a relational data stream management system (RDSMS). Originally based upon relational algebra and tuple relational calculus, SQL consists of a data definition language and a data manipulation language. The scope of SQL includes data insert, query, update and delete, schema creation and modification, and data access control. Although SQL is often described as, and to a great extent is, a declarative language (4GL), it also includes procedural elements.
+
+A data manipulation language (DML) is a family of syntax elements similar to a computer programming language used for selecting, inserting, deleting and updating data in a database. Performing read-only queries of data is sometimes also considered a component of DML. Data manipulation language comprises the SQL data change statements, which modify stored data but not the schema or database objects. Manipulation of persistent database objects, e.g., tables or stored procedures, via the SQL schema statements, rather than the data stored within them, is considered to be part of a separate data definition language. In SQL these two categories are similar in their detailed syntax, data types, expressions etc., but distinct in their overall function.
+
+A data definition language or data description language (DDL) is a syntax similar to a computer programming language for defining data structures, especially database schemas. Many data description languages use a declarative syntax to define fields and data types. SQL, however, uses a collection of imperative verbs whose effect is to modify the schema of the database by adding, changing, or deleting definitions of tables or other objects. These statements can be freely mixed with other SQL statements, so the DDL is not truly a separate language.
+
+Most important commands list:
+•SQL SELECT
+•SQL DISTINCT
+•SQL WHERE
+•SQL AND OR
+•SQL IN
+•SQL BETWEEN
+•SQL Wildcard
+•SQL LIKE
+•SQL ORDER BY
+•SQL GROUP BY
+•SQL HAVING
+•SQL ALIAS
+•SQL AS
+•SQL SELECT UNIQUE
+•SQL INSERT INTO
+•SQL INSERT INTO SELECT
+•SQL UPDATE
+•SQL DELETE FROM
+

@@ -1,0 +1,20 @@
+In database relational modeling and implementation, a unique key is a set of zero, one, or more attributes. The value(s) of these attributes are required to be unique for each tuple (row) in a relation. The value, or combination of values, of unique key attributes for any tuple should not be repeated for any other tuple in that relation.
+
+When more than one column is combined to form a unique key, their combined value is used to access each row and maintain uniqueness. These keys are referred to as aggregate. or compound keys. Values are not combined, they are compared using their data types.
+
+When a column or set of columns is defined as unique to the database management system, the system verifies that each set of value(s) is unique before assigning the constraint. After the column(s) are defined as unique, an error will occur if an insertion is attempted with values that already exist. Some systems do not allow key values to be updated, and all systems will not allow duplicates. This ensures that uniqueness is maintained in both the primary table and any relations that are later bound to it.
+
+Primary key - only one key within an entity is selected to be the primary key. This is the key that is allowed to migrate to other entities to define the relationships that exist among the entities. When the data model is instantiated into a physical database, it is the key that the system uses the most when accessing the table, or joining the tables together when selecting data.
+
+Foreign key - a unique key that has migrated to another entity. In the context of relational databases, a foreign key is a field (or collection of fields) in one table that uniquely identifies a row of another table. In simpler words, the foreign key is defined in a second table, but it refers to the primary key in the first table. For example, a table called Employee has a primary key called employee_id. Another table called Employee Details has a foreign key which references employee_id in order to uniquely identify the relationship between both the tables. The table containing the foreign key is called the child table, and the table containing the candidate key is called the referenced or parent table.
+
+
+					Differences:
+
+Primary key uniquely identify a record in the table. - Foreign key is a field in the table that is primary key in another table. 
+
+Primary Key can't accept null values. - Foreign key can accept multiple null value. 
+
+By default, Primary key is clustered index and data in the database table is physically organized in the sequence of clustered index. - Foreign key do not automatically create an index, clustered or non-clustered. You can manually create an index on foreign key.
+
+We can have only one Primary key in a table. - We can have more than one foreign key in a table.

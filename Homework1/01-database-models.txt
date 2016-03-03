@@ -1,0 +1,26 @@
+Database models:
+1.  Flat model
+2.  Netork model
+3.  Object model
+4.  Document model
+5.  Hierarchical model
+6.  Entity-relationship model
+7.  Entity-attribute-value model
+8.  Star schema
+9.  Associative model
+10. Multidimensional model
+11. Multivalue model
+12. Semantic model
+13. XML database
+14. Named graph
+15. Triplestore
+
+
+					The Multivalue model:
+
+Multivalue databases are "lumpy" data, in that they can store exactly the same way as relational databases, but they also permit a level of depth which the relational model can only approximate using sub-tables. This is nearly identical to the way XML expresses data, where a given field/attribute can have multiple right answers at the same time. Multivalue can be thought of as a compressed form of XML.
+
+An example is an invoice, which in either multivalue or relational data could be seen as (A) Invoice Header Table - one entry per invoice, and (B) Invoice Detail Table - one entry per line item. In the multivalue model, we have the option of storing the data as on table, with an embedded table to represent the detail: (A) Invoice Table - one entry per invoice, no other tables needed.
+
+The advantage is that the atomicity of the Invoice (conceptual) and the Invoice (data representation) are one-to-one. This also results in fewer reads, less referential integrity issues, and a dramatic decrease in the hardware needed to support a given transaction volume.
+
